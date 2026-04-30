@@ -43,19 +43,27 @@
 
   // Large tent gallery modal
   var galleryTriggers = document.querySelectorAll(".js-large-tent-gallery-trigger");
+  var eventTentGalleryTriggers = document.querySelectorAll(".js-event-tent-gallery-trigger");
   var galleryModal = document.getElementById("large-tent-gallery");
-  if (galleryTriggers.length && galleryModal) {
+  if ((galleryTriggers.length || eventTentGalleryTriggers.length) && galleryModal) {
     var galleryImage = galleryModal.querySelector(".gallery-modal__image");
     var galleryPrev = galleryModal.querySelector("[data-gallery-prev]");
     var galleryNext = galleryModal.querySelector("[data-gallery-next]");
     var galleryCloseEls = galleryModal.querySelectorAll("[data-gallery-close]");
-    var galleryImages = [
-      { src: "images/industry-liela-10x4.jpg", alt: "Lielā dārza telts 10 × 4 m" },
+    var defaultGalleryImages = [
+      { src: "images/industry-liela-10x4.jpg", alt: "Lielā dārza telts 8 × 4 m" },
       { src: "images/gallery-large-2.jpg", alt: "PVC angārs - foto 2" },
       { src: "images/gallery-large-3.jpg", alt: "PVC angārs - foto 3" },
       { src: "images/gallery-large-4.jpg", alt: "PVC angārs - foto 4" },
       { src: "images/gallery-large-5.jpg", alt: "PVC angārs - foto 5" }
     ];
+    var eventTentGalleryImages = [
+      { src: "images/liela-telts-1.jpeg", alt: "Liela telts - foto 1" },
+      { src: "images/liela-telts-2.jpeg", alt: "Liela telts - foto 2" },
+      { src: "images/liela-telts-3.jpeg", alt: "Liela telts - foto 3" },
+      { src: "images/liela-telts-4.jpeg", alt: "Liela telts - foto 4" }
+    ];
+    var galleryImages = defaultGalleryImages;
     var galleryIndex = 0;
 
     function updateGalleryImage() {
@@ -88,6 +96,16 @@
     galleryTriggers.forEach(function (trigger) {
       trigger.addEventListener("click", function (event) {
         event.preventDefault();
+        galleryImages = defaultGalleryImages;
+        galleryIndex = 0;
+        openGallery();
+      });
+    });
+
+    eventTentGalleryTriggers.forEach(function (trigger) {
+      trigger.addEventListener("click", function (event) {
+        event.preventDefault();
+        galleryImages = eventTentGalleryImages;
         galleryIndex = 0;
         openGallery();
       });

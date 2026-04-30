@@ -594,11 +594,30 @@ a:hover {
   border: 1px solid rgba(0, 0, 0, 0.06);
 }
 
+.industry-card--wide {
+  grid-column: 1 / -1;
+}
+
 .industry-card__img {
+  position: relative;
   height: 200px;
   background-image: var(--img);
   background-size: cover;
   background-position: center;
+}
+
+.industry-card__img::after {
+  content: attr(data-price);
+  position: absolute;
+  top: 0.65rem;
+  right: 0.65rem;
+  background: rgba(0, 0, 0, 0.72);
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.3rem 0.55rem;
+  border-radius: 3px;
+  letter-spacing: 0.01em;
 }
 
 .industry-card__body {
