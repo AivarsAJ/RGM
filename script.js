@@ -58,10 +58,10 @@
       { src: "images/gallery-large-5.jpg", alt: "PVC angārs - foto 5" }
     ];
     var eventTentGalleryImages = [
-      { src: "images/liela-telts-1.jpeg", alt: "Liela telts - foto 1" },
-      { src: "images/liela-telts-2.jpeg", alt: "Liela telts - foto 2" },
-      { src: "images/liela-telts-3.jpeg", alt: "Liela telts - foto 3" },
-      { src: "images/liela-telts-4.jpeg", alt: "Liela telts - foto 4" }
+      { src: "images/liela-telts-galerija-1.jpeg", alt: "Liela telts - foto 1" },
+      { src: "images/liela-telts-galerija-2.jpeg", alt: "Liela telts - foto 2" },
+      { src: "images/liela-telts-galerija-3.jpeg", alt: "Liela telts - foto 3" },
+      { src: "images/liela-telts-galerija-4.jpeg", alt: "Liela telts - foto 4" }
     ];
     var galleryImages = defaultGalleryImages;
     var galleryIndex = 0;
