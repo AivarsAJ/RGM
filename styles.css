@@ -108,6 +108,15 @@ a:hover {
   text-decoration: underline;
 }
 
+@keyframes top-bar-ticker {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
 .header-main {
   display: flex;
   align-items: center;
@@ -969,9 +978,31 @@ a:hover {
 }
 
 @media (max-width: 768px) {
-  .top-bar__contact {
+  .top-bar {
+    overflow: hidden;
+  }
+
+  .top-bar .container {
     width: 100%;
+    margin-inline: 0;
+  }
+
+  .top-bar__inner {
+    flex-wrap: nowrap;
+    width: max-content;
+    gap: 0.6rem;
+    animation: top-bar-ticker 16s linear infinite;
+  }
+
+  .top-bar__inner > * {
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+
+  .top-bar__contact {
+    width: auto;
     margin-left: 0;
+    gap: 0.6rem;
   }
 
   .nav-toggle {
